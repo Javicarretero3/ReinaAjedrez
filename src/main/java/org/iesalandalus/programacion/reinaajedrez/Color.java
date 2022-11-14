@@ -7,4 +7,9 @@ public enum Color {
 	public String getCadenaAMostrar () {
 		return cadenaAMostrar;
 	}
+	
+	@Override
+	public String toString() {
+		return "Cadena -> " + cadenaAMostrar;
+	}
 }
