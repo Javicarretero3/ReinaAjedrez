@@ -4,8 +4,8 @@ public enum Color {
 	BLANCO, NEGRO;
 	String cadenaAMostrar;
 	
-	public String getCadenaAMostrar () {
-		return cadenaAMostrar;
+	public void CadenaAMostrar() {
+		this.cadenaAMostrar = cadenaAMostrar;
 	}
 	
 	@Override
