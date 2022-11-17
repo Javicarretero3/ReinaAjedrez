@@ -94,6 +94,14 @@ public class Consola {
 		return direccion;
 	}
 	
-		
-
+	public static int elegirPasos( ) {
+		int elegirpasos;
+	    do {
+		System.out.println("Elija un número para elegir los pasos que dara la reina. ");
+		elegirpasos = Entrada.entero();
+	}while (elegirpasos < 1 || elegirpasos > 7); 
+		return elegirpasos;
+	}
+	
+	
 }
