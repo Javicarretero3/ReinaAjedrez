@@ -18,6 +18,15 @@ public class Consola {
 	    System.out.println("2º opción: Salir. ");
 	}
 	
+	public static int elegirOpcionMenu() {
+		int opcionmenu;
+		do {
+			System.out.println("Elija una de las opciones anteriores. ");
+			opcionmenu = Entrada.entero();
+		}while (opcionmenu < 1 || opcionmenu > 4);
+		return opcionmenu;
+	}
+	
 	
 
 }
