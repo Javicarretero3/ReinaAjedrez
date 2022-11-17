@@ -11,6 +11,13 @@ public class Consola {
 	private Consola() {
 	}
 	
+	public static void mostrarMenu() {
+		System.out.println("1º opción: Crear reina por defecto.");
+		System.out.println("2º opción: Crear reina eligiendo el color. ");
+		System.out.println("2º opción: Mover. ");
+	    System.out.println("2º opción: Salir. ");
+	}
+	
 	
 
 }
