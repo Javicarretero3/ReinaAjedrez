@@ -47,7 +47,16 @@ public class Consola {
 		return color;
 	}
 	
-	
+	public static void mostrarMenuDirecciones() {
+		System.out.println("Escriba 1 para mover hacia el Norte. ");
+		System.out.println("Escriba 2 para mover hacia el Noreste. ");
+		System.out.println("Escriba 3 para mover hacia el Este. ");
+		System.out.println("Escriba 4 para mover hacia el Sureste. ");
+		System.out.println("Escriba 5 para mover hacia el Sur. ");
+		System.out.println("Escriba 6 para mover hacia el Suroeste. ");
+		System.out.println("Escriba 7 para mover hacia el Oeste. ");
+		System.out.println("Escriba 8 para mover hacia el Noroeste. ");
+	}
 		
 
 }
