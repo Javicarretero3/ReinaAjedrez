@@ -1,12 +1,15 @@
 package org.iesalandalus.programacion.reinaajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Reina {
 	private Color color;
 	private Posicion posicion;
 	
-	
-	
-	
+	public Reina() throws OperationNotSupportedException {
+		color = Color.BLANCO;
+		posicion = new Posicion(1, 'd');
+	}
 	
 	public Color getColor() {
 		return color;
