@@ -103,5 +103,7 @@ public class Consola {
 		return elegirpasos;
 	}
 	
-	
+	public static void despedirse() {
+		System.out.println("Gracias por utlizar esta aplicación. ¡Esperamos verte pronto!");
+	}
 }
