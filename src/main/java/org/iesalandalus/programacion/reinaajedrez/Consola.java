@@ -27,6 +27,27 @@ public class Consola {
 		return opcionmenu;
 	}
 	
+	public static Color elegirOpcion() {
+		Color color = Color.BLANCO;
+		int elegircolor;
+		do {
+			System.out.println("Escriba el numero deseado para su reina. ");
+			System.out.println("Escriba 1 para color BLANCO. ");
+			System.out.println("Escriba 2 para color NEGRO. ");
+			elegircolor = Entrada.entero();
+		} while (elegircolor < 1 || elegircolor > 2);
+		switch (elegircolor) {
+		case 1:
+			color = Color.BLANCO;
+			break;
+		case 2:
+			color = Color.NEGRO;
+			break;
+		}
+		return color;
+	}
 	
+	
+		
 
 }
