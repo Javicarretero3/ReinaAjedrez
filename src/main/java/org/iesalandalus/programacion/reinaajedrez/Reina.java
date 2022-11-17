@@ -64,5 +64,10 @@ public class Reina {
 			posicion = new Posicion(posicion.getFila() - pasos, (char) (posicion.getColumna() - (char) pasos));
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return "Color = " + color + ", Posición => " + posicion;
+	}
 
 }
