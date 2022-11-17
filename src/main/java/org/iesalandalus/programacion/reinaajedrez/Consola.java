@@ -57,6 +57,43 @@ public class Consola {
 		System.out.println("Escriba 7 para mover hacia el Oeste. ");
 		System.out.println("Escriba 8 para mover hacia el Noroeste. ");
 	}
+	
+	public static Direccion elegirDireccion() {
+		Direccion direccion = Direccion.NORTE;
+		int elegirdireccion;
+		do {
+			System.out.println("Escoja un número para mover a la reina hacia la dirección deseada. ");
+			elegirdireccion = Entrada.entero();
+		}while (elegirdireccion < 1 || elegirdireccion > 8);
+		switch(elegirdireccion) {
+		case 1:
+			direccion = Direccion.NORTE;
+			break;
+		case 2:
+			direccion = Direccion.NORESTE;
+			break;
+		case 3:
+			direccion = Direccion.ESTE;
+			break;
+		case 4:
+			direccion = Direccion.SURESTE;
+			break;
+		case 5:
+			direccion = Direccion.SUR;
+			break;
+		case 6:
+			direccion = Direccion.SUROESTE;
+			break;
+		case 7:
+			direccion = Direccion.OESTE;
+			break;
+		case 8:
+			direccion = Direccion.NOROESTE;
+			break;
+		}
+		return direccion;
+	}
+	
 		
 
 }
