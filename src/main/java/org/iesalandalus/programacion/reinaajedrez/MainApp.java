@@ -1,9 +1,11 @@
 package org.iesalandalus.programacion.reinaajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 import org.iesalandalus.programacion.reinaajedrez.modelo.Reina;
 
 public class MainApp {
-	private Reina reina;
+	private static Reina reina;
 
 	public static void main(String[] args) {
 		MainApp.ejecutarOpcion(0);
@@ -54,7 +56,17 @@ public class MainApp {
 		}
 	}
 	
-	
+	private static void mostrarReina() {
+		if (reina == null) {
+			System.out.println("Su reina aun no ha sido creada, necesita crearla para poder acceder a ella. ");
+			System.out.println("");
+			System.out.println("");
+		} else {
+			System.out.println(reina);
+			System.out.println("");
+			System.out.println("");
+		}
+	}
 
 
 }
