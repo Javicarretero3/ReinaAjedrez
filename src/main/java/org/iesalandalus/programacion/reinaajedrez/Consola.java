@@ -1,10 +1,8 @@
 package org.iesalandalus.programacion.reinaajedrez;
 
 import org.iesalandalus.programacion.utilidades.Entrada;
-
-import org.iesalandalus.programacion.reinaajedrez.Direccion;
-
-import org.iesalandalus.programacion.reinaajedrez.Color;
+import org.iesalandalus.programacion.reinaajedrez.modelo.Color;
+import org.iesalandalus.programacion.reinaajedrez.modelo.Direccion;
 
 public class Consola {
 	
