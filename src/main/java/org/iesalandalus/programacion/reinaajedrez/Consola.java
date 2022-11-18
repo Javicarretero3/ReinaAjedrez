@@ -25,7 +25,7 @@ public class Consola {
 		return opcionmenu;
 	}
 	
-	public static Color elegirOpcion() {
+	public static Color elegirColor() {
 		Color color = Color.BLANCO;
 		int elegircolor;
 		do {
