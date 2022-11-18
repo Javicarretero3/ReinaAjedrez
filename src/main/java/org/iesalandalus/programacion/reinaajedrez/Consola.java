@@ -60,7 +60,7 @@ public class Consola {
 		Direccion direccion = Direccion.NORTE;
 		int elegirdireccion;
 		do {
-			System.out.println("Escoja un número para mover a la reina hacia la dirección deseada. ");
+			System.out.println("Escoja un número del 1 al 8 para mover a la reina hacia la dirección deseada. ");
 			elegirdireccion = Entrada.entero();
 		}while (elegirdireccion < 1 || elegirdireccion > 8);
 		switch(elegirdireccion) {
@@ -95,7 +95,7 @@ public class Consola {
 	public static int elegirPasos( ) {
 		int elegirpasos;
 	    do {
-		System.out.println("Elija un número para elegir los pasos que dara la reina. ");
+		System.out.println("Elija un número del 1 al 7 para elegir los pasos que dara la reina. ");
 		elegirpasos = Entrada.entero();
 	}while (elegirpasos < 1 || elegirpasos > 7); 
 		return elegirpasos;
