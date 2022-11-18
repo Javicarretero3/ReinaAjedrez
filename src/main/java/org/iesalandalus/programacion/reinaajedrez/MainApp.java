@@ -45,6 +45,16 @@ public class MainApp {
 	private static void crearReinaColor() {
 		reina = new Reina(Consola.elegirColor());
 	}
+	
+	private static void mover() {
+		if (reina == null) {
+			System.out.println("");
+		} else {
+			reina.mover(Consola.elegirDireccion(), Consola.elegirPasos());
+		}
+	}
+	
+	
 
 
 }
