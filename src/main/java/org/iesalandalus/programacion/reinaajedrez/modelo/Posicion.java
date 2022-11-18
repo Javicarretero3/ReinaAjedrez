@@ -4,10 +4,10 @@ import java.util.Objects;
 
 import javax.naming.OperationNotSupportedException;
 
-    public class Posicion {
-	    private int fila;
-	    private char columna;
- 
+public class Posicion {
+	private int fila;
+	private char columna;
+
 	public Posicion(int fila, char columna) throws OperationNotSupportedException {
 		try {
 			setFila(fila);
@@ -37,7 +37,7 @@ import javax.naming.OperationNotSupportedException;
 
 	public char getColumna() {
 		return columna;
-	}
+    }
 
 	private void setColumna(char columna) {
 		if (columna < 'a') {
