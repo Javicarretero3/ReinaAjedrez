@@ -41,6 +41,10 @@ public class MainApp {
 	private static void crearReinaDefecto() {
 		reina = new Reina();
 	}
+	
+	private static void crearReinaColor() {
+		reina = new Reina(Consola.elegirColor());
+	}
 
 
 }
