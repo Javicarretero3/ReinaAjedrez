@@ -5,19 +5,105 @@ import javax.naming.OperationNotSupportedException;
 public class Reina {
 	private Color color;
 	private Posicion posicion;
-	
-	public Reina() throws OperationNotSupportedException {
+
+	public Reina() {
 		color = Color.BLANCO;
-		posicion = new Posicion(1, 'd');
+		try {
+			posicion = new Posicion(1, 'd');
+		} catch (OperationNotSupportedException e) {
+			e.printStackTrace();
+		}
 	}
-	
+
+	public Reina(Color color) {
+		setColor(color);
+		if (color == Color.NEGRO) {
+			try {
+				posicion = new Posicion(8, 'd');
+			} catch (OperationNotSupportedException e) {
+				e.printStackTrace();
+			}
+		} else if (color == Color.BLANCO) {
+			try {
+				posicion = new Posicion(1, 'd');
+			} catch (OperationNotSupportedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public void mover(Direccion direccion, int pasos) {
+		if (pasos < 1 || pasos > 7) {
+			throw new IllegalArgumentException("Los pasos deben estar comprendidos entre 1 y 7. ");
+		}
+		switch (direccion) {
+		case NORTE:
+			try {
+				posicion = new Posicion(posicion.getFila() + pasos, posicion.getColumna());
+			} catch (OperationNotSupportedException e) {
+				System.out.println("La reina se ha salido del tablero. ¡Prueba otra vez! ");
+			}
+			break;
+		case SUR:
+			try {
+				posicion = new Posicion(posicion.getFila() - pasos, posicion.getColumna());
+			} catch (OperationNotSupportedException e) {
+				System.out.println("La reina se ha salido del tablero. ¡Prueba otra vez! ");
+			}
+			break;
+		case ESTE:
+			try {
+				posicion = new Posicion(posicion.getFila(), (char) (posicion.getColumna() + pasos));
+			} catch (OperationNotSupportedException e) {
+				System.out.println("La reina se ha salido del tablero. ¡Prueba otra vez! ");
+			}
+			break;
+		case OESTE:
+			try {
+				posicion = new Posicion(posicion.getFila(), (char) (posicion.getColumna() - pasos));
+			} catch (OperationNotSupportedException e) {
+				System.out.println("La reina se ha salido del tablero. ¡Prueba otra vez! ");
+			}
+			break;
+		case NORESTE:
+			try {
+				posicion = new Posicion(posicion.getFila() + pasos, (char) (posicion.getColumna() + pasos));
+			} catch (OperationNotSupportedException e) {
+				System.out.println("La reina se ha salido del tablero. ¡Prueba otra vez! ");
+			}
+			break;
+		case NOROESTE:
+			try {
+				posicion = new Posicion(posicion.getFila() + pasos, (char) (posicion.getColumna() - pasos));
+			} catch (OperationNotSupportedException e) {
+				System.out.println("La reina se ha salido del tablero. ¡Prueba otra vez! ");
+			}
+			break;
+		case SURESTE:
+			try {
+				posicion = new Posicion(posicion.getFila() - pasos, (char) (posicion.getColumna() + pasos));
+			} catch (OperationNotSupportedException e) {
+				System.out.println("La reina se ha salido del tablero. ¡Prueba otra vez! ");
+			}
+			break;
+		case SUROESTE:
+			try {
+				posicion = new Posicion(posicion.getFila() - pasos, (char) (posicion.getColumna() - pasos));
+			} catch (OperationNotSupportedException e) {
+				System.out.println("La reina se ha salido del tablero. ¡Prueba otra vez! ");
+			}
+			break;
+		}
+	}
+
 	public Color getColor() {
 		return color;
 	}
-	public void setColor(Color color) {
+
+	private void setColor(Color color) {
 		this.color = color;
 	}
-	
+
 	public Posicion getPosicion() {
 		return new Posicion(posicion);
 	}
@@ -25,49 +111,9 @@ public class Reina {
 	private void setPosicion(Posicion posicion) {
 		this.posicion = new Posicion(posicion);
 	}
-	
-	public Reina(Color color) throws OperationNotSupportedException {
-		this();
-		setColor(color);
-		if (color == Color.NEGRO) {
-			posicion = new Posicion(8, 'd');
-		} else if (color == Color.BLANCO) {
-			posicion = new Posicion(1, 'd');
-		}
-	}
-	
-	public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException {
-		if (pasos < 1) {
-			throw new IllegalArgumentException(
-					"La reina no se puede mover con un número inferior a 1. ");
-		} else if (pasos > 7) {
-			throw new IllegalArgumentException(
-					"La reina no se pude mover con un número mayot a 7. ");
-		} else if (direccion == null) {
-			throw new NullPointerException("La direccion asignada no puede ser nula. ");
-		}
-		if (direccion == Direccion.NORTE) {
-			posicion = new Posicion(posicion.getFila() + pasos, posicion.getColumna());
-		} else if (direccion == Direccion.SUR) {
-			posicion = new Posicion(posicion.getFila() - pasos, posicion.getColumna());
-		} else if (direccion == Direccion.ESTE) {
-			posicion = new Posicion(posicion.getFila(), (char) (posicion.getColumna() + (char) pasos));
-		} else if (direccion == Direccion.OESTE) {
-			posicion = new Posicion(posicion.getFila(), (char) (posicion.getColumna() - (char) pasos));
-		} else if (direccion == Direccion.NORESTE) {
-			posicion = new Posicion(posicion.getFila() + pasos, (char) (posicion.getColumna() + (char) pasos));
-		} else if (direccion == Direccion.NOROESTE) {
-			posicion = new Posicion(posicion.getFila() + pasos, (char) (posicion.getColumna() - (char) pasos));
-		} else if (direccion == Direccion.SURESTE) {
-			posicion = new Posicion(posicion.getFila() - pasos, (char) (posicion.getColumna() + (char) pasos));
-		} else if (direccion == Direccion.SUROESTE) {
-			posicion = new Posicion(posicion.getFila() - pasos, (char) (posicion.getColumna() - (char) pasos));
-		}
-	}
-	
+
 	@Override
 	public String toString() {
 		return "Color = " + color + ", Posición => " + posicion;
 	}
-
 }
